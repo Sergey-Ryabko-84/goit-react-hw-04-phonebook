@@ -33,10 +33,10 @@ export const App = () => {
     resetForm();
   };
 
-  const deleteContact = e => {
-    const { id } = e.currentTarget;
-    setContacts(state => state.filter(contact => contact.id !== id));
-  };
+  const deleteContact = e =>
+    setContacts(state =>
+      state.filter(contact => contact.id !== e.currentTarget.id)
+    );
 
   const filterHandler = e => setFilter(e.currentTarget.value.trim());
 
